@@ -1,5 +1,6 @@
 package com.microservice.user.controller;
 
+import com.microservice.user.VO.ResponseTemplateVO;
 import com.microservice.user.entity.User;
 import com.microservice.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -31,10 +32,17 @@ public class UserController {
         return userService.getUsers();
     }
 
-    @GetMapping("/{Id}")
+    /*@GetMapping("/{Id}")
     public Optional<User> getUserById(@PathVariable("Id") Long Id){
 
         log.info("inside getUserById method of UserController.");
         return userService.getUserById(Id);
     }
+*/
+    @GetMapping("/{id}")
+    public ResponseTemplateVO getUserWithDepartment(@PathVariable("id") Long userId) {
+        log.info("Inside getUserWithDepartment of UserController");
+        return userService.getUserWithDepartment(userId);
+    }
+
 }

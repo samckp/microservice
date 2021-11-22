@@ -1,4 +1,5 @@
-package com.microservice.dept.entity;
+package com.microservice.user.VO;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
